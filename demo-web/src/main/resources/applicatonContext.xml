@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+    <bean id="helloImpl" class="com.dongnao.web.Hello"></bean>
+    <bean  class="com.dongnao.server.RemoteServiceBean" init-method="init">
+        <property name="serviceName" value="com.dongnao.api.Ihello"></property>
+        <property name="serviceImpl" ref="helloImpl"></property>
+    </bean>
+</beans>

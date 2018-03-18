@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.dongnao</groupId>
+  <artifactId>demo-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>demo-server</module>
+        <module>demo-common</module>
+        <module>demo-api</module>
+        <module>demo-client</module>
+        <module>demo-web</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+            <version>4.0.32.Final</version>
+        </dependency>
+          <dependency>
+              <groupId>com.caucho</groupId>
+              <artifactId>hessian</artifactId>
+              <version>4.0.38</version>
+          </dependency>
+          <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+          <dependency>
+              <groupId>com.google.guava</groupId>
+              <artifactId>guava</artifactId>
+              <version>21.0</version>
+          </dependency>
+      </dependencies>
+    </dependencyManagement>
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+</project>
